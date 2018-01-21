@@ -43,4 +43,5 @@ management:
 
 ## Use Application
 to add a user make a POST like this example : ```http://localhost:8080/user/demis.rizzotto```
+
 to list all application users : ```http://localhost:8080/user```
