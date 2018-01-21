@@ -2,8 +2,8 @@
 
 ## Pre requisites
 Java 8
-Maven 3.3.x
-PostGreSql running instance (H2 for dev profile)
+
+PostgreSQL running instance (H2 for dev profile)
 
 ## Postgres Instance Configuration
 In order to use your instance please update the [ Database Configuration Section ] section in ```src/main/resources/application.yml```
