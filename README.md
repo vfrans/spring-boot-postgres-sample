@@ -1,20 +1,26 @@
 # Welcome to spring-boot-postgres Sample project
 
+Simple SpringBoot application using a database and provide a basic API.
+
 ## Pre requisites
-Java 8
 
-PostgreSQL running instance (H2 for dev profile)
+- Java 8 
+- PostgreSQL database (H2 database for development profile)
 
-## Postgres Instance Configuration
-In order to use your instance please update the [ Database Configuration Section ] section in ```src/main/resources/application.yml```
+## Application Configuration
+
+One way to configure Spring applications is to use YAML configuration files.
+Springboot, loads the application properties outside of your packaged jar from the `application.yml` file.
+
+Following is a simple YAML file that contains configuration for use PostgreSQL database datasource.
 
 ```yaml
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/blood
+    url: jdbc:postgresql://localhost:5432/sampledb
     username: sampleuser
-    password: sampledb
+    password: sampleuserpassword
     platform: POSTGRESQL
   jpa:
     hibernate:
@@ -32,16 +38,32 @@ management:
     enabled: false
 ```
 
-## Run Application Locally
+For the development mode the dev profile load the properties from `src/main/resources/config/dev/application-dev.yml`.
+
+## Application Usage
+
+To add a user make a **POST** like this example : `http://localhost:8080/user/demis.rizzotto`
+
+To list all users : `http://localhost:8080/user`
+
+Others useful endpoints:
+
+- `/info`
+- `/health`
+- `/env`
+
+
+## Developpement instructions
+
+### Run Application Locally
+
 ```mvn -Dspring.profiles.active={dev-prod} spring-boot:run```
 
-## Run Integration Tests
+### Run Integration Tests
+
 ```mvn test```
 
-##  Build
+###  Build
+
 ```mvn package```
 
-## Use Application
-to add a user make a POST like this example : ```http://localhost:8080/user/demis.rizzotto```
-
-to list all application users : ```http://localhost:8080/user```
