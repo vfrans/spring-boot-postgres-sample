@@ -42,7 +42,7 @@ For the development mode the dev profile load the properties from `src/main/reso
 
 ## Application Usage
 
-To add a user make a **POST** like this example : `http://localhost:8080/user/demis.rizzotto`
+To add a user make a **POST** like this example : `http://localhost:8080/user/some.user`
 
 To list all users : `http://localhost:8080/user`
 
